@@ -1,6 +1,7 @@
 package amazon;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,17 +29,15 @@ public void beforetest() {
 	scan.close();
 	
 	driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	
 }
 
 @Test
-public void login() {
-	
-	
-	driver.manage().window().maximize();
+public void login() throws InterruptedException {
 	
 	driver.navigate().to("https://www.amazon.in");
 	
-
 	WebElement element= driver.findElement(By.id("nav-signin-tooltip"));
 	element.click();
 
@@ -53,12 +52,23 @@ public void login() {
 	
 	WebElement element5= driver.findElement(By.id("signInSubmit"));
 	element5.click();
+	
 }
 
+@Test
+public void search() {
+	driver.get("https://www.amazon.in");
+	WebElement element1 = driver.findElement(By.id("twotabsearchtextbox"));
+	element1.sendKeys("Hp");
+	element1.sendKeys(Keys.ENTER);
+	
+	WebElement element2 = driver.findElement(By.partialLinkText("HP Pavilion Gaming"));
+	element2.click();
+}
 @AfterTest
 public void aftertest() throws InterruptedException {
 	Thread.sleep(10000);
-	driver.close();
+	driver.quit();
 	
 }
 
