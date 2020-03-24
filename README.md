@@ -4,17 +4,17 @@ Automating the steps involved in testing of web applications over different brow
 ## Tools used: 
 * Eclipse IDE
 * Selenium Standalone Server jar 
-* TestNG framework 
+* Browser Drivers
 
 ## Language 
 * Java 
 
-#### Requirements for project execution:
+### Requirements for project execution:
 * Java JDK 8 above 
 * Java IDE like [Eclipse](https://www.eclipse.org/downloads/), NetBeans, or IntelliJ
 * Selenium server Jar : [selenium](https://www.selenium.dev/downloads/)
 * TestNG Framework in IDE.
-* Browser driver - like [chromedriver](https://drive.google.com/file/d/1--UA2MsIUv4S_UhH401myu576jKYp346/view?usp=sharing) ,[gecko driver for firefox](https://drive.google.com/file/d/1-2Ew-KV03XZgN0EjeYzFPbmYNsMeHcpd/view?usp=sharing), and [IE driver](https://drive.google.com/open?id=1-7VBytkRyCklyGrwrbSafbjzsAsxRNNr)
+* Browser driver - like [Chromedriver](https://drive.google.com/file/d/1--UA2MsIUv4S_UhH401myu576jKYp346/view?usp=sharing) ,[Gecko driver for Firefox](https://drive.google.com/file/d/1-2Ew-KV03XZgN0EjeYzFPbmYNsMeHcpd/view?usp=sharing), and [IE driver](https://drive.google.com/open?id=1-7VBytkRyCklyGrwrbSafbjzsAsxRNNr)
 
 
 *for installing TestNG in eclipse* - [Read this!](https://www.guru99.com/install-testng-in-eclipse.html)
