@@ -5,9 +5,9 @@
     <classes>
       <class name="amazon.Chromedriver">
         <methods>
+          <include name="productDetail"/>
           <include name="beforetest"/>
           <include name="aftertest"/>
-          <include name="search"/>
         </methods>
       </class> <!-- amazon.Chromedriver -->
     </classes>

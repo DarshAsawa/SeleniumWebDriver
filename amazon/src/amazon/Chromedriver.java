@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Chromedriver {
 	public static WebDriver driver;
@@ -58,17 +60,24 @@ public void login() throws InterruptedException {
 @Test
 public void search() {
 	driver.get("https://www.amazon.in");
+	
+	//search for HP brand using search box.
 	WebElement element1 = driver.findElement(By.id("twotabsearchtextbox"));
 	element1.sendKeys("Hp");
 	element1.sendKeys(Keys.ENTER);
 	
-	WebElement element2 = driver.findElement(By.partialLinkText("HP Pavilion Gaming"));
+	WebElement element_HP = driver.findElement(By.partialLinkText("HP"));
+	element_HP.click();
+	
+	//Open the first HP Chromebook being displayed dynamically.
+	WebElement element2 = driver.findElement(By.partialLinkText("Core i5 8th Gen"));
 	element2.click();
 }
+
 @AfterTest
 public void aftertest() throws InterruptedException {
 	Thread.sleep(10000);
-	driver.quit();
+	//driver.quit();
 	
 }
 
