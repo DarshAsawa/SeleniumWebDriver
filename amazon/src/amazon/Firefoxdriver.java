@@ -30,11 +30,14 @@ public void beforetest() {
 //Search functionality..
 @Test
 public void search() throws InterruptedException {
-	
+	//Searching for dell using search bar.
 	WebElement element1 = driver.findElement(By.id("twotabsearchtextbox"));
 	element1.sendKeys("Dell");
 	element1.sendKeys(Keys.ENTER);
-	Thread.sleep(2000);
+	
+	Thread.sleep(2000);//letting the page load properly in case of slow connections.
+	
+	//using a partial text in order to search for core i5 8th Gen dell laptops..
 	WebElement element2 = driver.findElement(By.partialLinkText("Core i5 8th gen"));
 	element2.click();
 	
