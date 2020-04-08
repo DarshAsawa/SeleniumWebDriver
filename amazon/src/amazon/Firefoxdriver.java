@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -24,7 +25,7 @@ public void beforetest() {
 	driver=new FirefoxDriver();
 	driver.manage().window().maximize();//to maximize the window.	
 	
-	driver.get(baseURL);//to open amazon in the browser.
+	
 }
 
 //Search functionality..
