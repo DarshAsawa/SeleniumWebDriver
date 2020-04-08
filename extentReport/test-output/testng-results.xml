@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-04-08T12:44:34 IST" name="Default suite" finished-at="2020-04-08T12:44:55 IST" duration-ms="21346">
+    <groups>
+    </groups>
+    <test started-at="2020-04-08T12:44:34 IST" name="Default test" finished-at="2020-04-08T12:44:55 IST" duration-ms="21346">
+      <class name="extentReport.ExtentReport1">
+        <test-method is-config="true" signature="startTest()[pri:0, instance:extentReport.ExtentReport1@7ff95560]" started-at="2020-04-08T12:44:34 IST" name="startTest" finished-at="2020-04-08T12:44:42 IST" duration-ms="7800" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method signature="extentReportsDemo()[pri:0, instance:extentReport.ExtentReport1@7ff95560]" started-at="2020-04-08T12:44:42 IST" name="extentReportsDemo" finished-at="2020-04-08T12:44:44 IST" duration-ms="2354" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentReportsDemo -->
+        <test-method signature="search_item()[pri:0, instance:extentReport.ExtentReport1@7ff95560]" started-at="2020-04-08T12:44:44 IST" name="search_item" finished-at="2020-04-08T12:44:54 IST" duration-ms="9740" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search_item -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:extentReport.ExtentReport1@7ff95560]" started-at="2020-04-08T12:44:54 IST" name="endTest" finished-at="2020-04-08T12:44:55 IST" duration-ms="1400" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- extentReport.ExtentReport1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
