@@ -58,11 +58,11 @@ public void detailsInput() {
 public void login() throws Exception {
 	
 	driver.navigate().to("https://www.amazon.in");
-	Chromedriver.takeSnapShot(driver, "M:\\WebTesting\\Web-Application-Testing\\amazon\\Screenshot\\amzon_mainPage.jpg") ;   
+	Chromedriver.takeSnapShot(driver, System.getProperty("user.dir") + "\\Screenshot\\amzon_mainPage.jpg") ;   
 	
 	WebElement element= driver.findElement(By.id("nav-signin-tooltip"));
 	element.click();
-	Chromedriver.takeSnapShot(driver, "M:\\WebTesting\\Web-Application-Testing\\amazon\\Screenshot\\EmailEntry.jpg") ; 
+	Chromedriver.takeSnapShot(driver,System.getProperty("user.dir") +"\\Screenshot\\EmailEntry.jpg") ; 
 	WebElement element2=driver.findElement(By.id("ap_email"));
 	element2.sendKeys(email);
 	
@@ -71,7 +71,7 @@ public void login() throws Exception {
 	
 	WebElement element4=driver.findElement(By.id("ap_password"));
 	element4.sendKeys(password);
-	Chromedriver.takeSnapShot(driver, "M:\\WebTesting\\Web-Application-Testing\\amazon\\Screenshot\\PasswordPage.jpg") ; 
+	Chromedriver.takeSnapShot(driver, System.getProperty("user.dir") +"\\Screenshot\\PasswordPage.jpg") ; 
 	
 	WebElement element5= driver.findElement(By.id("signInSubmit"));
 	element5.click();
