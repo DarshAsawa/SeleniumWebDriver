@@ -1,4 +1,4 @@
-# Web Application Atuomated Testing 
+# Web Application Automated Testing 
 
 Automating the steps involved in testing of web applications over different browsers like Chrome, Firefox, and IE using *Selenium* and *TestNG Framework*.
 ## Tools used: 
