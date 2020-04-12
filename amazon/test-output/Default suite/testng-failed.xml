@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="amazon.IEDriver">
+      <class name="amazon.Firefoxdriver">
         <methods>
-          <include name="beforeTest"/>
           <include name="search"/>
-          <include name="afterTest"/>
+          <include name="searchElement"/>
+          <include name="afterSearch"/>
+          <include name="beforetest"/>
+          <include name="afertest"/>
         </methods>
-      </class> <!-- amazon.IEDriver -->
+      </class> <!-- amazon.Firefoxdriver -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
