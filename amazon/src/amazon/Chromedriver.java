@@ -5,7 +5,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -13,15 +15,24 @@ import org.testng.annotations.Test;
 import java.util.Scanner;
 public class Chromedriver {
 	public static WebDriver driver;
-	public String email;
-	public String password;
+	public String email = null;
+	public String password = null;
+	Scanner scan;
+	
 	
 
 @BeforeTest
 public void beforetest() {
 	System.setProperty("webdriver.chrome.driver", "M:\\WebTesting\\chromedriver\\chromedriver.exe");
+	driver=new ChromeDriver();
+	driver.manage().window().maximize();
 	
-	Scanner scan=new Scanner(System.in);
+}
+
+@BeforeMethod
+public void detailsInput() {
+	scan = new Scanner(System.in);
+	
 	System.out.print("Enter email or phone number:\n");
 	email=scan.nextLine();
 	
@@ -30,8 +41,6 @@ public void beforetest() {
 	
 	scan.close();
 	
-	driver=new ChromeDriver();
-	driver.manage().window().maximize();
 	
 }
 
@@ -56,8 +65,14 @@ public void login() throws InterruptedException {
 	element5.click();
 	
 }
+@AfterMethod
+public void afterLogin() {
+	scan.close();
+}
 
-@Test
+//BeforeMethod and AfterMethod runs before and after each test case,
+//and thus not suitable with this search test case.... 
+@Test(enabled=false)
 public void search() {
 	driver.get("https://www.amazon.in");
 	
