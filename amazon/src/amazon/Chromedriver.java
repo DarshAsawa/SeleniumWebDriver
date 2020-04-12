@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 public class Chromedriver {
 	public static WebDriver driver;
 	public String email = null;
@@ -26,6 +27,8 @@ public void beforetest() {
 	System.setProperty("webdriver.chrome.driver", "M:\\WebTesting\\chromedriver\\chromedriver.exe");
 	driver=new ChromeDriver();
 	driver.manage().window().maximize();
+	//adding implicit wait to the code 
+	driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS) ;
 	
 }
 
@@ -65,6 +68,7 @@ public void login() throws InterruptedException {
 	element5.click();
 	
 }
+
 @AfterMethod
 public void afterLogin() {
 	scan.close();

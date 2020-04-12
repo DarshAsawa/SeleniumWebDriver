@@ -1,6 +1,7 @@
 package amazon;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -29,8 +30,12 @@ public void beforetest() {
 	driver.get(baseURL);
 	driver.manage().window().maximize();//to maximize the window.	
 	
-	
+	//adding implicit wait to the code in place of Thread.sleep() 
+	driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS) ;
+		
 }
+
+
 @BeforeMethod
 public void searchElement() {
 	//Method for asking user for search element before every test case
@@ -46,9 +51,7 @@ public void search() throws InterruptedException {
 	WebElement element1 = driver.findElement(By.id("twotabsearchtextbox"));
 	element1.sendKeys(searchelement);
 	element1.sendKeys(Keys.ENTER);
-	
-	Thread.sleep(2000);//letting the page load properly in case of slow connections.
-	
+		
 	//Only asking for prime supported items only ...
 	WebElement element2 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div[1]/div/div[3]/span/div/div[1]/ul/li/span/a/i"));
 	element2.click();
