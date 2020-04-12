@@ -7,6 +7,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -60,15 +62,22 @@ public void login() throws Exception {
 	driver.navigate().to("https://www.amazon.in");
 	Chromedriver.takeSnapShot(driver, System.getProperty("user.dir") + "\\Screenshot\\amzon_mainPage.jpg") ;   
 	
+	//Explicit wait functionality...
+	 WebDriverWait wait = new WebDriverWait(driver,20);
+	
 	WebElement element= driver.findElement(By.id("nav-signin-tooltip"));
 	element.click();
+
 	Chromedriver.takeSnapShot(driver,System.getProperty("user.dir") +"\\Screenshot\\EmailEntry.jpg") ; 
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap_email")));
 	WebElement element2=driver.findElement(By.id("ap_email"));
 	element2.sendKeys(email);
 	
 	WebElement element3=driver.findElement(By.id("continue"));
 	element3.click();
 	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap_password")));
 	WebElement element4=driver.findElement(By.id("ap_password"));
 	element4.sendKeys(password);
 	Chromedriver.takeSnapShot(driver, System.getProperty("user.dir") +"\\Screenshot\\PasswordPage.jpg") ; 
