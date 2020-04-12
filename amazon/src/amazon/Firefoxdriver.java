@@ -1,13 +1,19 @@
 package amazon;
 
+import java.io.File;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -46,15 +52,27 @@ public void searchElement() {
 
 //Search functionality..
 @Test
-public void search() throws InterruptedException {
+public void search() throws Exception {
 	//Searching for dell using search bar.
 	WebElement element1 = driver.findElement(By.id("twotabsearchtextbox"));
 	element1.sendKeys(searchelement);
 	element1.sendKeys(Keys.ENTER);
-		
-	//Only asking for prime supported items only ...
-	WebElement element2 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div[1]/div/div[3]/span/div/div[1]/ul/li/span/a/i"));
+	
+
+	
+	//Explicit wait condition until it find the 'prime' image element.....
+	 WebDriverWait wait = new WebDriverWait(driver,20);
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("a-list-item")));
+	
+    //Take snap after search, Product Page...
+    Firefoxdriver.takeSnapShot(driver,System.getProperty("user.dir") +"\\Screenshot\\SearchedProductionPage.jpg") ; 
+    
+    //Prime supported items only ...
+	WebElement element2 = driver.findElement(By.className("a-list-item"));
 	element2.click();
+	
+	//Take snap of Prime eligible products.
+	Firefoxdriver.takeSnapShot(driver,System.getProperty("user.dir") +"\\Screenshot\\OnlyPrimeProducts.jpg") ; 
 		
 }
 
@@ -69,4 +87,18 @@ public void afertest() throws InterruptedException {
 	driver.close();
 }
 
+public static void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
+    //Convert web driver object to TakeScreenshot
+    TakesScreenshot ss =((TakesScreenshot)webdriver);
+
+    //Call getScreenshotAs method to create image file
+    File SrcFile=ss.getScreenshotAs(OutputType.FILE);
+
+    //Move image file to new destination
+    File DestFile=new File(fileWithPath);
+
+    //Copy file at destination
+    FileUtils.copyFile(SrcFile, DestFile);
+
+}
 }
