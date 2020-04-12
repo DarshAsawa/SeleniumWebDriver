@@ -6,9 +6,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="M:/WebTesting/guice-4.2.2.jar"/>
 	<classpathentry kind="lib" path="C:/eclipse/plugins/org.testng_7.1.0.r202001120626.jar" sourcepath="C:/eclipse/plugins/org.testng.source_7.1.0.r202001120626.jar"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="M:/WebTesting/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="M:/WebTesting/Web-Application-Testing/amazon/lib/guice-4.2.2.jar"/>
+	<classpathentry kind="lib" path="M:/WebTesting/Web-Application-Testing/amazon/lib/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="M:/WebTesting/Web-Application-Testing/amazon/lib/commons-io-2.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
